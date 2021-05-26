@@ -49,11 +49,11 @@ namespace CalculatorApp
             this.decimalBtn = new System.Windows.Forms.Button();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.defaultRadioBtn = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.defaultRadioBtn = new System.Windows.Forms.RadioButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,6 +131,7 @@ namespace CalculatorApp
             this.calTextBox.Size = new System.Drawing.Size(625, 158);
             this.calTextBox.TabIndex = 15;
             this.calTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.calTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.calTextBox_KeyPress);
             // 
             // oneBtn
             // 
@@ -273,41 +274,17 @@ namespace CalculatorApp
             this.panel1.Size = new System.Drawing.Size(298, 323);
             this.panel1.TabIndex = 35;
             // 
-            // textBox1
+            // radioButton3
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(15, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(275, 37);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Style Switcher";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // defaultRadioBtn
-            // 
-            this.defaultRadioBtn.AutoSize = true;
-            this.defaultRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.defaultRadioBtn.Location = new System.Drawing.Point(84, 101);
-            this.defaultRadioBtn.Name = "defaultRadioBtn";
-            this.defaultRadioBtn.Size = new System.Drawing.Size(132, 35);
-            this.defaultRadioBtn.TabIndex = 1;
-            this.defaultRadioBtn.TabStop = true;
-            this.defaultRadioBtn.Text = "Default";
-            this.defaultRadioBtn.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(93, 152);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(114, 35);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Apple";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton3.Location = new System.Drawing.Point(47, 254);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(213, 35);
+            this.radioButton3.TabIndex = 4;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Greek Islands";
+            this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // radioButton2
             // 
@@ -321,17 +298,41 @@ namespace CalculatorApp
             this.radioButton2.Text = "Sunset";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // radioButton1
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.Location = new System.Drawing.Point(47, 254);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(213, 35);
-            this.radioButton3.TabIndex = 4;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Greek Islands";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(93, 152);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(114, 35);
+            this.radioButton1.TabIndex = 2;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Apple";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // defaultRadioBtn
+            // 
+            this.defaultRadioBtn.AutoSize = true;
+            this.defaultRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.defaultRadioBtn.Location = new System.Drawing.Point(84, 101);
+            this.defaultRadioBtn.Name = "defaultRadioBtn";
+            this.defaultRadioBtn.Size = new System.Drawing.Size(132, 35);
+            this.defaultRadioBtn.TabIndex = 1;
+            this.defaultRadioBtn.TabStop = true;
+            this.defaultRadioBtn.Text = "Default";
+            this.defaultRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(15, 35);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(275, 37);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.Text = "Style Switcher";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // CalculatorApp
             // 
