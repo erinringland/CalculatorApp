@@ -12,7 +12,7 @@ namespace CalculatorApp
 {
     public partial class CalculatorApp : Form
     {
-        string num1;
+        string stringNum1;
         char operation;
         public CalculatorApp()
         {
@@ -27,28 +27,28 @@ namespace CalculatorApp
 
         private void additionBtn_Click(object sender, EventArgs e)
         {
-            num1 = calTextBox.Text;
+            stringNum1 = calTextBox.Text;
             operation = '+';
             calTextBox.Text = "";
         }
 
         private void subtractBtn_Click(object sender, EventArgs e)
         {
-            num1 = calTextBox.Text;
+            stringNum1 = calTextBox.Text;
             operation = '-';
             calTextBox.Text = "";
         }
 
         private void multiplyBtn_Click(object sender, EventArgs e)
         {
-            num1 = calTextBox.Text;
+            stringNum1 = calTextBox.Text;
             operation = '*';
             calTextBox.Text = "";
         }
 
         private void divisionBtn_Click(object sender, EventArgs e)
         {
-            num1 = calTextBox.Text;
+            stringNum1 = calTextBox.Text;
             operation = '/';
             calTextBox.Text = "";
         }
@@ -57,10 +57,10 @@ namespace CalculatorApp
         {
             double result = 0.0;
 
-            string num2 = calTextBox.Text;
+            string stringNum2 = calTextBox.Text;
 
-            double n1 = double.Parse(num1);
-            double n2 = double.Parse(num2);
+            double n1 = double.Parse(stringNum1);
+            double n2 = double.Parse(stringNum2);
 
             switch (operation)
             {
