@@ -1,0 +1,10 @@
+C:\Users\Erin\Pictures\CalculatorApp\CalculatorApp\bin\Debug\CalculatorApp.exe.config
+C:\Users\Erin\Pictures\CalculatorApp\CalculatorApp\bin\Debug\CalculatorApp.exe
+C:\Users\Erin\Pictures\CalculatorApp\CalculatorApp\bin\Debug\CalculatorApp.pdb
+C:\Users\Erin\Pictures\CalculatorApp\CalculatorApp\obj\Debug\CalculatorApp.csprojAssemblyReference.cache
+C:\Users\Erin\Pictures\CalculatorApp\CalculatorApp\obj\Debug\CalculatorApp.Properties.Resources.resources
+C:\Users\Erin\Pictures\CalculatorApp\CalculatorApp\obj\Debug\CalculatorApp.csproj.GenerateResource.cache
+C:\Users\Erin\Pictures\CalculatorApp\CalculatorApp\obj\Debug\CalculatorApp.csproj.CoreCompileInputs.cache
+C:\Users\Erin\Pictures\CalculatorApp\CalculatorApp\obj\Debug\CalculatorApp.exe
+C:\Users\Erin\Pictures\CalculatorApp\CalculatorApp\obj\Debug\CalculatorApp.pdb
+C:\Users\Erin\Pictures\CalculatorApp\CalculatorApp\obj\Debug\CalculatorApp.CalculatorApp.resources
