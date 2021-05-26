@@ -39,14 +39,22 @@ namespace CalculatorApp
             this.oneBtn = new System.Windows.Forms.Button();
             this.twoBtn = new System.Windows.Forms.Button();
             this.threeBtn = new System.Windows.Forms.Button();
-            this.sixBtn = new System.Windows.Forms.Button();
-            this.fiveBtn = new System.Windows.Forms.Button();
             this.fourBtn = new System.Windows.Forms.Button();
-            this.nineBtn = new System.Windows.Forms.Button();
-            this.eightBtn = new System.Windows.Forms.Button();
+            this.fiveBtn = new System.Windows.Forms.Button();
+            this.sixBtn = new System.Windows.Forms.Button();
             this.sevenBtn = new System.Windows.Forms.Button();
+            this.eightBtn = new System.Windows.Forms.Button();
+            this.nineBtn = new System.Windows.Forms.Button();
             this.zeroBtn = new System.Windows.Forms.Button();
             this.decimalBtn = new System.Windows.Forms.Button();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.defaultRadioBtn = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // clearBtn
@@ -123,7 +131,6 @@ namespace CalculatorApp
             this.calTextBox.Size = new System.Drawing.Size(625, 158);
             this.calTextBox.TabIndex = 15;
             this.calTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            //this.calTextBox.TextChanged += new System.EventHandler(this.calTextBox_TextChanged);
             // 
             // oneBtn
             // 
@@ -158,16 +165,16 @@ namespace CalculatorApp
             this.threeBtn.UseVisualStyleBackColor = true;
             this.threeBtn.Click += new System.EventHandler(this.threeBtn_Click);
             // 
-            // sixBtn
+            // fourBtn
             // 
-            this.sixBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sixBtn.Location = new System.Drawing.Point(390, 564);
-            this.sixBtn.Name = "sixBtn";
-            this.sixBtn.Size = new System.Drawing.Size(150, 150);
-            this.sixBtn.TabIndex = 21;
-            this.sixBtn.Text = "6";
-            this.sixBtn.UseVisualStyleBackColor = true;
-            this.sixBtn.Click += new System.EventHandler(this.sixBtn_Click);
+            this.fourBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fourBtn.Location = new System.Drawing.Point(78, 564);
+            this.fourBtn.Name = "fourBtn";
+            this.fourBtn.Size = new System.Drawing.Size(150, 150);
+            this.fourBtn.TabIndex = 19;
+            this.fourBtn.Text = "4";
+            this.fourBtn.UseVisualStyleBackColor = true;
+            this.fourBtn.Click += new System.EventHandler(this.fourBtn_Click);
             // 
             // fiveBtn
             // 
@@ -180,27 +187,27 @@ namespace CalculatorApp
             this.fiveBtn.UseVisualStyleBackColor = true;
             this.fiveBtn.Click += new System.EventHandler(this.fiveBtn_Click);
             // 
-            // fourBtn
+            // sixBtn
             // 
-            this.fourBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fourBtn.Location = new System.Drawing.Point(78, 564);
-            this.fourBtn.Name = "fourBtn";
-            this.fourBtn.Size = new System.Drawing.Size(150, 150);
-            this.fourBtn.TabIndex = 19;
-            this.fourBtn.Text = "4";
-            this.fourBtn.UseVisualStyleBackColor = true;
-            this.fourBtn.Click += new System.EventHandler(this.fourBtn_Click);
+            this.sixBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sixBtn.Location = new System.Drawing.Point(390, 564);
+            this.sixBtn.Name = "sixBtn";
+            this.sixBtn.Size = new System.Drawing.Size(150, 150);
+            this.sixBtn.TabIndex = 21;
+            this.sixBtn.Text = "6";
+            this.sixBtn.UseVisualStyleBackColor = true;
+            this.sixBtn.Click += new System.EventHandler(this.sixBtn_Click);
             // 
-            // nineBtn
+            // sevenBtn
             // 
-            this.nineBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nineBtn.Location = new System.Drawing.Point(390, 720);
-            this.nineBtn.Name = "nineBtn";
-            this.nineBtn.Size = new System.Drawing.Size(150, 150);
-            this.nineBtn.TabIndex = 24;
-            this.nineBtn.Text = "9";
-            this.nineBtn.UseVisualStyleBackColor = true;
-            this.nineBtn.Click += new System.EventHandler(this.nineBtn_Click);
+            this.sevenBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sevenBtn.Location = new System.Drawing.Point(78, 720);
+            this.sevenBtn.Name = "sevenBtn";
+            this.sevenBtn.Size = new System.Drawing.Size(150, 150);
+            this.sevenBtn.TabIndex = 22;
+            this.sevenBtn.Text = "7";
+            this.sevenBtn.UseVisualStyleBackColor = true;
+            this.sevenBtn.Click += new System.EventHandler(this.sevenBtn_Click);
             // 
             // eightBtn
             // 
@@ -213,16 +220,16 @@ namespace CalculatorApp
             this.eightBtn.UseVisualStyleBackColor = true;
             this.eightBtn.Click += new System.EventHandler(this.eightBtn_Click);
             // 
-            // sevenBtn
+            // nineBtn
             // 
-            this.sevenBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sevenBtn.Location = new System.Drawing.Point(78, 720);
-            this.sevenBtn.Name = "sevenBtn";
-            this.sevenBtn.Size = new System.Drawing.Size(150, 150);
-            this.sevenBtn.TabIndex = 22;
-            this.sevenBtn.Text = "7";
-            this.sevenBtn.UseVisualStyleBackColor = true;
-            this.sevenBtn.Click += new System.EventHandler(this.sevenBtn_Click);
+            this.nineBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nineBtn.Location = new System.Drawing.Point(390, 720);
+            this.nineBtn.Name = "nineBtn";
+            this.nineBtn.Size = new System.Drawing.Size(150, 150);
+            this.nineBtn.TabIndex = 24;
+            this.nineBtn.Text = "9";
+            this.nineBtn.UseVisualStyleBackColor = true;
+            this.nineBtn.Click += new System.EventHandler(this.nineBtn_Click);
             // 
             // zeroBtn
             // 
@@ -246,11 +253,93 @@ namespace CalculatorApp
             this.decimalBtn.UseVisualStyleBackColor = true;
             this.decimalBtn.Click += new System.EventHandler(this.decimalBtn_Click);
             // 
+            // splitter1
+            // 
+            this.splitter1.Location = new System.Drawing.Point(0, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(3, 1096);
+            this.splitter1.TabIndex = 34;
+            this.splitter1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.radioButton3);
+            this.panel1.Controls.Add(this.radioButton2);
+            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Controls.Add(this.defaultRadioBtn);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Location = new System.Drawing.Point(733, 76);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(298, 323);
+            this.panel1.TabIndex = 35;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(15, 35);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(275, 37);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.Text = "Style Switcher";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // defaultRadioBtn
+            // 
+            this.defaultRadioBtn.AutoSize = true;
+            this.defaultRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.defaultRadioBtn.Location = new System.Drawing.Point(84, 101);
+            this.defaultRadioBtn.Name = "defaultRadioBtn";
+            this.defaultRadioBtn.Size = new System.Drawing.Size(132, 35);
+            this.defaultRadioBtn.TabIndex = 1;
+            this.defaultRadioBtn.TabStop = true;
+            this.defaultRadioBtn.Text = "Default";
+            this.defaultRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(93, 152);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(114, 35);
+            this.radioButton1.TabIndex = 2;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Apple";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(84, 203);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(130, 35);
+            this.radioButton2.TabIndex = 3;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Sunset";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton3.Location = new System.Drawing.Point(47, 254);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(213, 35);
+            this.radioButton3.TabIndex = 4;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Greek Islands";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
             // CalculatorApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 1096);
+            this.ClientSize = new System.Drawing.Size(1109, 1096);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.splitter1);
             this.Controls.Add(this.decimalBtn);
             this.Controls.Add(this.zeroBtn);
             this.Controls.Add(this.nineBtn);
@@ -271,6 +360,8 @@ namespace CalculatorApp
             this.Controls.Add(this.clearBtn);
             this.Name = "CalculatorApp";
             this.Text = "Calculator Application";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,14 +378,21 @@ namespace CalculatorApp
         private System.Windows.Forms.Button oneBtn;
         private System.Windows.Forms.Button twoBtn;
         private System.Windows.Forms.Button threeBtn;
-        private System.Windows.Forms.Button sixBtn;
-        private System.Windows.Forms.Button fiveBtn;
         private System.Windows.Forms.Button fourBtn;
-        private System.Windows.Forms.Button nineBtn;
-        private System.Windows.Forms.Button eightBtn;
+        private System.Windows.Forms.Button fiveBtn;
+        private System.Windows.Forms.Button sixBtn;
         private System.Windows.Forms.Button sevenBtn;
+        private System.Windows.Forms.Button eightBtn;
+        private System.Windows.Forms.Button nineBtn;
         private System.Windows.Forms.Button zeroBtn;
         private System.Windows.Forms.Button decimalBtn;
+        private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton defaultRadioBtn;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

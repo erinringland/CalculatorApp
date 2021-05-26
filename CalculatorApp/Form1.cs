@@ -147,5 +147,29 @@ namespace CalculatorApp
         {
 
         }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                // Decimal
+            }
+            else
+            {
+                // Binary
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                // add this check value to a list
+            }
+            else
+            {
+                // remove this check value from the list
+            }
+        }
     }
 }
