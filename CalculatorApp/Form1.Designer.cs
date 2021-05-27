@@ -54,6 +54,7 @@ namespace CalculatorApp
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.defaultRadioBtn = new System.Windows.Forms.RadioButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.convertToBinary = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -264,6 +265,7 @@ namespace CalculatorApp
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.radioButton3);
             this.panel1.Controls.Add(this.radioButton2);
             this.panel1.Controls.Add(this.radioButton1);
@@ -271,7 +273,7 @@ namespace CalculatorApp
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Location = new System.Drawing.Point(733, 76);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(298, 323);
+            this.panel1.Size = new System.Drawing.Size(306, 323);
             this.panel1.TabIndex = 35;
             // 
             // radioButton3
@@ -327,18 +329,30 @@ namespace CalculatorApp
             this.textBox1.BackColor = System.Drawing.SystemColors.Control;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(15, 35);
+            this.textBox1.Location = new System.Drawing.Point(0, 35);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(275, 37);
+            this.textBox1.Size = new System.Drawing.Size(306, 37);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Style Switcher";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // convertToBinary
+            // 
+            this.convertToBinary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.convertToBinary.Location = new System.Drawing.Point(733, 408);
+            this.convertToBinary.Name = "convertToBinary";
+            this.convertToBinary.Size = new System.Drawing.Size(306, 150);
+            this.convertToBinary.TabIndex = 36;
+            this.convertToBinary.Text = "Convert to Binary";
+            this.convertToBinary.UseVisualStyleBackColor = true;
+            this.convertToBinary.Click += new System.EventHandler(this.convertToBinary_Click);
             // 
             // CalculatorApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1109, 1096);
+            this.Controls.Add(this.convertToBinary);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.decimalBtn);
@@ -394,6 +408,7 @@ namespace CalculatorApp
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton defaultRadioBtn;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button convertToBinary;
     }
 }
 
