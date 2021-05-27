@@ -160,10 +160,28 @@ namespace CalculatorApp
 
         private void convertToBinary_Click(object sender, EventArgs e)
         {
+
             decimal numConvert = decimal.Parse(calTextBox.Text);
+            decimal Quotient = numConvert / 2;
 
             if(numConvert <= 0 )
                 MessageBox.Show("Cannot convert a negative number!", "Note", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            Stack<decimal> binCount = new Stack<decimal>();
+
+            binCount.Push(numConvert % 2);
+
+            while (Quotient > 1)
+            {
+                decimal Remainder = Math.Floor(Quotient % 2);
+                binCount.Push(Remainder);
+                Quotient /= 2;
+            }
+
+            calTextBox.Text = "";
+
+            foreach (var item in binCount)
+                calTextBox.Text += item;
         }
     }
 }
