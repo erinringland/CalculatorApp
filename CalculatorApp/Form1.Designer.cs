@@ -357,6 +357,7 @@ namespace CalculatorApp
             this.convertToDec.TabIndex = 37;
             this.convertToDec.Text = "Convert to Decimal";
             this.convertToDec.UseVisualStyleBackColor = true;
+            this.convertToDec.Click += new System.EventHandler(this.convertToDec_Click);
             // 
             // CalculatorApp
             // 

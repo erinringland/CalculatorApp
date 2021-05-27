@@ -160,7 +160,6 @@ namespace CalculatorApp
 
         private void convertToBinary_Click(object sender, EventArgs e)
         {
-
             decimal numConvert = decimal.Parse(calTextBox.Text);
             decimal Quotient = numConvert / 2;
 
@@ -182,6 +181,33 @@ namespace CalculatorApp
 
             foreach (var item in binCount)
                 calTextBox.Text += item;
+        }
+
+        private void convertToDec_Click(object sender, EventArgs e)
+        {
+            string binString = calTextBox.Text;
+
+            foreach (var num in binString)
+                if (num != '0' && num != '1')
+                {
+                    MessageBox.Show("The number entered is not a binary number!", "Note", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+            var binArr = binString.Select(ch => ch - '0').ToArray();
+            var multiplerNum = binArr.Length - 1;
+            double finalNum = 0;
+
+            calTextBox.Text = "";
+
+            foreach (var item in binArr)
+            {
+                finalNum += item * Math.Pow(2, multiplerNum);
+                multiplerNum--;
+            }
+
+            calTextBox.Text = finalNum.ToString();
+
         }
     }
 }
