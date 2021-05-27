@@ -90,7 +90,8 @@ namespace CalculatorApp
 
         private void decimalBtn_Click(object sender, EventArgs e)
         {
-            calTextBox.Text += ".";
+            if (!calTextBox.Text.Contains('.')) 
+                calTextBox.Text += ".";
         }
 
         private void oneBtn_Click(object sender, EventArgs e)
@@ -151,14 +152,18 @@ namespace CalculatorApp
         private void calTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
                 e.Handled = true; 
-            }
 
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
+            if (calTextBox.Text.Contains('.') && (e.KeyChar == '.'))
                 e.Handled = true;
-            }
+        }
+
+        private void convertToBinary_Click(object sender, EventArgs e)
+        {
+            decimal numConvert = decimal.Parse(calTextBox.Text);
+
+            if(numConvert <= 0 )
+                MessageBox.Show("Cannot convert a negative number!", "Note", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
