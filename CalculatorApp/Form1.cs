@@ -148,15 +148,16 @@ namespace CalculatorApp
 
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void calTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (radioButton1.Checked)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
-                // Decimal
+                e.Handled = true; 
             }
-            else
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
-                // Binary
+                e.Handled = true;
             }
         }
     }
