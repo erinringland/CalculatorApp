@@ -55,6 +55,7 @@ namespace CalculatorApp
             this.defaultRadioBtn = new System.Windows.Forms.RadioButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.convertToBinary = new System.Windows.Forms.Button();
+            this.convertToDec = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -347,11 +348,22 @@ namespace CalculatorApp
             this.convertToBinary.UseVisualStyleBackColor = true;
             this.convertToBinary.Click += new System.EventHandler(this.convertToBinary_Click);
             // 
+            // convertToDec
+            // 
+            this.convertToDec.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.convertToDec.Location = new System.Drawing.Point(734, 564);
+            this.convertToDec.Name = "convertToDec";
+            this.convertToDec.Size = new System.Drawing.Size(306, 150);
+            this.convertToDec.TabIndex = 37;
+            this.convertToDec.Text = "Convert to Decimal";
+            this.convertToDec.UseVisualStyleBackColor = true;
+            // 
             // CalculatorApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1109, 1096);
+            this.Controls.Add(this.convertToDec);
             this.Controls.Add(this.convertToBinary);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitter1);
@@ -409,6 +421,7 @@ namespace CalculatorApp
         private System.Windows.Forms.RadioButton defaultRadioBtn;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button convertToBinary;
+        private System.Windows.Forms.Button convertToDec;
     }
 }
 
