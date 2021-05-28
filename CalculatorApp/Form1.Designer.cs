@@ -56,6 +56,7 @@ namespace CalculatorApp
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.convertToBinary = new System.Windows.Forms.Button();
             this.convertToDec = new System.Windows.Forms.Button();
+            this.convertToLocationNum = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -340,7 +341,7 @@ namespace CalculatorApp
             // convertToBinary
             // 
             this.convertToBinary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.convertToBinary.Location = new System.Drawing.Point(733, 408);
+            this.convertToBinary.Location = new System.Drawing.Point(733, 564);
             this.convertToBinary.Name = "convertToBinary";
             this.convertToBinary.Size = new System.Drawing.Size(306, 150);
             this.convertToBinary.TabIndex = 36;
@@ -351,7 +352,7 @@ namespace CalculatorApp
             // convertToDec
             // 
             this.convertToDec.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.convertToDec.Location = new System.Drawing.Point(734, 564);
+            this.convertToDec.Location = new System.Drawing.Point(734, 720);
             this.convertToDec.Name = "convertToDec";
             this.convertToDec.Size = new System.Drawing.Size(306, 150);
             this.convertToDec.TabIndex = 37;
@@ -359,11 +360,23 @@ namespace CalculatorApp
             this.convertToDec.UseVisualStyleBackColor = true;
             this.convertToDec.Click += new System.EventHandler(this.convertToDec_Click);
             // 
+            // convertToLocationNum
+            // 
+            this.convertToLocationNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.convertToLocationNum.Location = new System.Drawing.Point(733, 876);
+            this.convertToLocationNum.Name = "convertToLocationNum";
+            this.convertToLocationNum.Size = new System.Drawing.Size(307, 150);
+            this.convertToLocationNum.TabIndex = 38;
+            this.convertToLocationNum.Text = "Convert to Location Numeral";
+            this.convertToLocationNum.UseVisualStyleBackColor = true;
+            this.convertToLocationNum.Click += new System.EventHandler(this.convertToLocationNum_Click);
+            // 
             // CalculatorApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1109, 1096);
+            this.Controls.Add(this.convertToLocationNum);
             this.Controls.Add(this.convertToDec);
             this.Controls.Add(this.convertToBinary);
             this.Controls.Add(this.panel1);
@@ -423,6 +436,7 @@ namespace CalculatorApp
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button convertToBinary;
         private System.Windows.Forms.Button convertToDec;
+        private System.Windows.Forms.Button convertToLocationNum;
     }
 }
 
