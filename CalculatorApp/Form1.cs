@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,13 +17,12 @@ namespace CalculatorApp
         char operation;
         public CalculatorApp()
         {
-            InitializeComponent(); // Don't ever delete this message!
+            InitializeComponent(); // Don't ever delete this!
         }
 
         private void button2_Click(object sender, EventArgs e) // clearBtn
         {
             calTextBox.Text = "";
-            //MessageBox.Show("The text boxes have been cleared", "Note", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void additionBtn_Click(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace CalculatorApp
 
             string stringNum2 = calTextBox.Text;
 
-            if(stringNum1 == String.Empty)
+            if (stringNum1 == string.Empty || Regex.IsMatch(stringNum2, "^[a-zA-Z]*$") || Regex.IsMatch(stringNum1, "^[a-zA-Z]*$"))
             {
                 MessageBox.Show("Please enter a positive decimal!", "Note", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -91,68 +91,73 @@ namespace CalculatorApp
                 }
             else if (operation == '/' && n2 == 0)
                 MessageBox.Show("Cannot divide by Zero!", "Note", MessageBoxButtons.OK, MessageBoxIcon.Error);
-          
         }
 
         private void decimalBtn_Click(object sender, EventArgs e)
         {
+            clearTextBox();
             if (!calTextBox.Text.Contains('.')) 
                 calTextBox.Text += ".";
         }
 
         private void oneBtn_Click(object sender, EventArgs e)
         {
+            clearTextBox();
             calTextBox.Text += "1";
         }
 
         private void twoBtn_Click(object sender, EventArgs e)
         {
+            clearTextBox();
             calTextBox.Text += "2";
         }
 
         private void threeBtn_Click(object sender, EventArgs e)
         {
+            clearTextBox();
             calTextBox.Text += "3";
         }
 
         private void fourBtn_Click(object sender, EventArgs e)
         {
+            clearTextBox();
             calTextBox.Text += "4";
         }
 
         private void fiveBtn_Click(object sender, EventArgs e)
         {
+            clearTextBox();
             calTextBox.Text += "5";
         }
 
         private void sixBtn_Click(object sender, EventArgs e)
         {
+            clearTextBox();
             calTextBox.Text += "6";
         }
 
         private void sevenBtn_Click(object sender, EventArgs e)
         {
+            clearTextBox();
             calTextBox.Text += "7";
         }
 
         private void eightBtn_Click(object sender, EventArgs e)
         {
+            clearTextBox();
             calTextBox.Text += "8";
         }
 
         private void nineBtn_Click(object sender, EventArgs e)
         {
+            clearTextBox();
             calTextBox.Text += "9";
         }
 
         private void zeroBtn_Click(object sender, EventArgs e)
         {
+            clearTextBox();
             calTextBox.Text += "0";
-        }
-
-        private static void calTextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void calTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -163,15 +168,26 @@ namespace CalculatorApp
             if (calTextBox.Text.Contains('.') && (e.KeyChar == '.'))
                 e.Handled = true;
         }
+        private void clearTextBox()
+        {
+            var incomingStr = calTextBox.Text;
+
+            if (Regex.IsMatch(incomingStr, "^[a-zA-Z]*$"))
+            {
+                calTextBox.Text = "";
+            }
+        }
 
         private void convertToBinary_Click(object sender, EventArgs e)
         {
-            if(calTextBox.Text == string.Empty)
+            var incomingStr = calTextBox.Text;
+
+            if (calTextBox.Text == string.Empty || Regex.IsMatch(incomingStr, "^[a-zA-Z]*$"))
             {
                 MessageBox.Show("Please enter a positive decimal!", "Note", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+            
             decimal numConvert = decimal.Parse(calTextBox.Text);
             decimal Quotient = numConvert / 2;
 
