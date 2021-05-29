@@ -59,6 +59,12 @@ namespace CalculatorApp
 
             string stringNum2 = calTextBox.Text;
 
+            if(stringNum1 == String.Empty)
+            {
+                MessageBox.Show("Please enter a positive decimal!", "Note", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             double n1 = double.Parse(stringNum1);
             double n2 = double.Parse(stringNum2);
 
@@ -160,11 +166,17 @@ namespace CalculatorApp
 
         private void convertToBinary_Click(object sender, EventArgs e)
         {
+            if(calTextBox.Text == string.Empty)
+            {
+                MessageBox.Show("Please enter a positive decimal!", "Note", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             decimal numConvert = decimal.Parse(calTextBox.Text);
             decimal Quotient = numConvert / 2;
 
             if(numConvert <= 0 )
-                MessageBox.Show("Cannot convert a negative number!", "Note", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Cannot convert a negative decimal!", "Note", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             Stack<decimal> binCount = new Stack<decimal>();
 
@@ -185,6 +197,12 @@ namespace CalculatorApp
 
         private void convertToDec_Click(object sender, EventArgs e)
         {
+            if (calTextBox.Text == string.Empty)
+            {
+                MessageBox.Show("Please enter a binary number!", "Note", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             string binString = calTextBox.Text;
 
             foreach (var num in binString)
@@ -212,6 +230,12 @@ namespace CalculatorApp
 
         private void convertToLocationNum_Click(object sender, EventArgs e)
         {
+            if (calTextBox.Text == string.Empty)
+            {
+                MessageBox.Show("Please enter a positive decimal!", "Note", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             string locationNumString = "";
             var numToConvert = double.Parse(calTextBox.Text);
 
@@ -325,6 +349,424 @@ namespace CalculatorApp
             string locationNumStringRev = new string(newArr);
 
             calTextBox.Text = locationNumStringRev;
+        }
+
+        private void defaultRadioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            var colourBG = SystemColors.ControlLight;
+            var colourText = SystemColors.ControlText;
+
+            var inputBG = colourBG;
+            var inputTextColour = SystemColors.ControlText;
+
+            var btnTextColour = colourText;
+            var btnBorderColour = SystemColors.ControlLight;
+            var btnBG = SystemColors.ControlLightLight;
+            var btnBGalt1 = SystemColors.Control;
+
+            ActiveForm.BackColor = colourBG;
+            ActiveForm.ForeColor = colourText;
+
+            calTextBox.BackColor = inputBG;
+            calTextBox.ForeColor = inputTextColour;
+
+            textBox1.BackColor = colourBG;
+            textBox1.ForeColor = colourText;
+
+            zeroBtn.BackColor = btnBG;
+            zeroBtn.ForeColor = btnTextColour;
+            zeroBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            oneBtn.BackColor = btnBG;
+            oneBtn.ForeColor = btnTextColour;
+            oneBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            twoBtn.BackColor = btnBG;
+            twoBtn.ForeColor = btnTextColour;
+            twoBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            threeBtn.BackColor = btnBG;
+            threeBtn.ForeColor = btnTextColour;
+            threeBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            fourBtn.BackColor = btnBG;
+            fourBtn.ForeColor = btnTextColour;
+            fourBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            fiveBtn.BackColor = btnBG;
+            fiveBtn.ForeColor = btnTextColour;
+            fiveBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            sixBtn.BackColor = btnBG;
+            sixBtn.ForeColor = btnTextColour;
+            sixBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            sevenBtn.BackColor = btnBG;
+            sevenBtn.ForeColor = btnTextColour;
+            sevenBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            eightBtn.BackColor = btnBG;
+            eightBtn.ForeColor = btnTextColour;
+            eightBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            nineBtn.BackColor = btnBG;
+            nineBtn.ForeColor = btnTextColour;
+            nineBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            clearBtn.BackColor = btnBGalt1;
+            clearBtn.ForeColor = btnTextColour;
+            clearBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            equalBtn.BackColor = btnBGalt1;
+            equalBtn.ForeColor = btnTextColour;
+            equalBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            additionBtn.BackColor = btnBGalt1;
+            additionBtn.ForeColor = btnTextColour;
+            additionBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            subtractBtn.BackColor = btnBGalt1;
+            subtractBtn.ForeColor = btnTextColour;
+            subtractBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            multiplyBtn.BackColor = btnBGalt1;
+            multiplyBtn.ForeColor = btnTextColour;
+            multiplyBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            divisionBtn.BackColor = btnBGalt1;
+            divisionBtn.ForeColor = btnTextColour;
+            divisionBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            decimalBtn.BackColor = btnBG;
+            decimalBtn.ForeColor = btnTextColour;
+            decimalBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            convertToBinary.BackColor = btnBGalt1;
+            convertToBinary.ForeColor = btnTextColour;
+            convertToBinary.FlatAppearance.BorderColor = btnBorderColour;
+
+            convertToDec.BackColor = btnBGalt1;
+            convertToDec.ForeColor = btnTextColour;
+            convertToDec.FlatAppearance.BorderColor = btnBorderColour;
+
+            convertToLocationNum.BackColor = btnBGalt1;
+            convertToLocationNum.ForeColor = btnTextColour;
+            convertToLocationNum.FlatAppearance.BorderColor = btnBorderColour;
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e) // Apple Radio Button
+        {
+            var colourBG = Color.FromArgb(65, 65, 65);
+            var colourText = Color.White;
+
+            var inputBG = colourBG;
+            var inputTextColour = colourText;
+
+            var btnTextColour = colourBG;
+            var btnBorderColour = Color.FromArgb(65, 65, 65);
+            var btnBG = Color.FromArgb(222, 222, 222);
+            var btnBGalt1 = Color.FromArgb(255, 182, 0);
+            var btnBGalt2 = Color.FromArgb(200, 200, 200);
+
+            ActiveForm.BackColor = colourBG;
+            ActiveForm.ForeColor = colourText;
+
+            calTextBox.BackColor = inputBG;
+            calTextBox.ForeColor = inputTextColour;
+
+            textBox1.BackColor = colourBG;
+            textBox1.ForeColor = colourText;
+
+            zeroBtn.BackColor = btnBG;
+            zeroBtn.ForeColor = btnTextColour;
+            zeroBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            oneBtn.BackColor = btnBG;
+            oneBtn.ForeColor = btnTextColour;
+            oneBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            twoBtn.BackColor = btnBG;
+            twoBtn.ForeColor = btnTextColour;
+            twoBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            threeBtn.BackColor = btnBG;
+            threeBtn.ForeColor = btnTextColour;
+            threeBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            fourBtn.BackColor = btnBG;
+            fourBtn.ForeColor = btnTextColour;
+            fourBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            fiveBtn.BackColor = btnBG;
+            fiveBtn.ForeColor = btnTextColour;
+            fiveBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            sixBtn.BackColor = btnBG;
+            sixBtn.ForeColor = btnTextColour;
+            sixBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            sevenBtn.BackColor = btnBG;
+            sevenBtn.ForeColor = btnTextColour;
+            sevenBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            eightBtn.BackColor = btnBG;
+            eightBtn.ForeColor = btnTextColour;
+            eightBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            nineBtn.BackColor = btnBG;
+            nineBtn.ForeColor = btnTextColour;
+            nineBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            clearBtn.BackColor = btnBGalt2;
+            clearBtn.ForeColor = btnTextColour;
+            clearBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            equalBtn.BackColor = btnBGalt1;
+            equalBtn.ForeColor = colourText;
+            equalBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            additionBtn.BackColor = btnBGalt1;
+            additionBtn.ForeColor = colourText;
+            additionBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            subtractBtn.BackColor = btnBGalt1;
+            subtractBtn.ForeColor = colourText;
+            subtractBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            multiplyBtn.BackColor = btnBGalt1;
+            multiplyBtn.ForeColor = colourText;
+            multiplyBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            divisionBtn.BackColor = btnBGalt1;
+            divisionBtn.ForeColor = colourText;
+            divisionBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            decimalBtn.BackColor = btnBG;
+            decimalBtn.ForeColor = btnTextColour;
+            decimalBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            convertToBinary.BackColor = btnBGalt2;
+            convertToBinary.ForeColor = btnTextColour;
+            convertToBinary.FlatAppearance.BorderColor = btnBorderColour;
+
+            convertToDec.BackColor = btnBGalt2;
+            convertToDec.ForeColor = btnTextColour;
+            convertToDec.FlatAppearance.BorderColor = btnBorderColour;
+
+            convertToLocationNum.BackColor = btnBGalt2;
+            convertToLocationNum.ForeColor = btnTextColour;
+            convertToLocationNum.FlatAppearance.BorderColor = btnBorderColour;
+        }
+
+        private void sunsetRadioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            var colourBG = Color.FromArgb(40, 9, 4);
+            var colourText = Color.White;
+
+            var inputBG = colourBG;
+            var inputTextColour = colourText;
+
+            var btnTextColour = colourText;
+            var btnBorderColour = colourBG;
+            var btnBG = Color.FromArgb(104, 14, 52);
+            var btnBGalt1 = Color.FromArgb(154, 21, 26);
+            var btnBGalt2 = Color.FromArgb(194, 27, 18);
+            var btnBGalt3 = Color.FromArgb(252, 75, 42);
+            var btnBGalt4 = Color.FromArgb(255, 148, 94);
+
+            ActiveForm.BackColor = colourBG;
+            ActiveForm.ForeColor = colourText;
+
+            calTextBox.BackColor = inputBG;
+            calTextBox.ForeColor = inputTextColour;
+
+            textBox1.BackColor = colourBG;
+            textBox1.ForeColor = colourText;
+
+            zeroBtn.BackColor = btnBGalt4;
+            zeroBtn.ForeColor = btnTextColour;
+            zeroBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            oneBtn.BackColor = btnBGalt3;
+            oneBtn.ForeColor = btnTextColour;
+            oneBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            twoBtn.BackColor = btnBGalt3;
+            twoBtn.ForeColor = btnTextColour;
+            twoBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            threeBtn.BackColor = btnBGalt3;
+            threeBtn.ForeColor = btnTextColour;
+            threeBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            fourBtn.BackColor = btnBGalt2;
+            fourBtn.ForeColor = btnTextColour;
+            fourBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            fiveBtn.BackColor = btnBGalt2;
+            fiveBtn.ForeColor = btnTextColour;
+            fiveBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            sixBtn.BackColor = btnBGalt2;
+            sixBtn.ForeColor = btnTextColour;
+            sixBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            sevenBtn.BackColor = btnBGalt1;
+            sevenBtn.ForeColor = btnTextColour;
+            sevenBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            eightBtn.BackColor = btnBGalt1;
+            eightBtn.ForeColor = btnTextColour;
+            eightBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            nineBtn.BackColor = btnBGalt1;
+            nineBtn.ForeColor = btnTextColour;
+            nineBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            clearBtn.BackColor = btnBG;
+            clearBtn.ForeColor = btnTextColour;
+            clearBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            equalBtn.BackColor = btnBGalt4;
+            equalBtn.ForeColor = colourText;
+            equalBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            additionBtn.BackColor = btnBG;
+            additionBtn.ForeColor = colourText;
+            additionBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            subtractBtn.BackColor = btnBGalt1;
+            subtractBtn.ForeColor = colourText;
+            subtractBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            multiplyBtn.BackColor = btnBGalt2;
+            multiplyBtn.ForeColor = colourText;
+            multiplyBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            divisionBtn.BackColor = btnBGalt3;
+            divisionBtn.ForeColor = colourText;
+            divisionBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            decimalBtn.BackColor = btnBGalt4;
+            decimalBtn.ForeColor = btnTextColour;
+            decimalBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            convertToBinary.BackColor = btnBGalt2;
+            convertToBinary.ForeColor = btnTextColour;
+            convertToBinary.FlatAppearance.BorderColor = btnBorderColour;
+
+            convertToDec.BackColor = btnBGalt3;
+            convertToDec.ForeColor = btnTextColour;
+            convertToDec.FlatAppearance.BorderColor = btnBorderColour;
+
+            convertToLocationNum.BackColor = btnBGalt4;
+            convertToLocationNum.ForeColor = btnTextColour;
+            convertToLocationNum.FlatAppearance.BorderColor = btnBorderColour;
+        }
+
+        private void greekRadioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            var colourBG = Color.White;
+            var colourText = Color.FromArgb(65, 65, 65);
+
+            var inputBG = colourBG;
+            var inputTextColour = Color.FromArgb(65, 65, 65);
+
+            var btnTextColour = Color.FromArgb(19, 156, 234);
+            var btnBorderColour = Color.FromArgb(19, 156, 234);
+            var btnBG = Color.White;
+            var btnBGalt1 = Color.FromArgb(227, 245, 254);
+
+            ActiveForm.BackColor = colourBG;
+            ActiveForm.ForeColor = colourText;
+
+            calTextBox.BackColor = inputBG;
+            calTextBox.ForeColor = inputTextColour;
+
+            textBox1.BackColor = colourBG;
+            textBox1.ForeColor = colourText;
+
+            zeroBtn.BackColor = btnBG;
+            zeroBtn.ForeColor = btnTextColour;
+            zeroBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            oneBtn.BackColor = btnBG;
+            oneBtn.ForeColor = btnTextColour;
+            oneBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            twoBtn.BackColor = btnBG;
+            twoBtn.ForeColor = btnTextColour;
+            twoBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            threeBtn.BackColor = btnBG;
+            threeBtn.ForeColor = btnTextColour;
+            threeBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            fourBtn.BackColor = btnBG;
+            fourBtn.ForeColor = btnTextColour;
+            fourBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            fiveBtn.BackColor = btnBG;
+            fiveBtn.ForeColor = btnTextColour;
+            fiveBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            sixBtn.BackColor = btnBG;
+            sixBtn.ForeColor = btnTextColour;
+            sixBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            sevenBtn.BackColor = btnBG;
+            sevenBtn.ForeColor = btnTextColour;
+            sevenBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            eightBtn.BackColor = btnBG;
+            eightBtn.ForeColor = btnTextColour;
+            eightBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            nineBtn.BackColor = btnBG;
+            nineBtn.ForeColor = btnTextColour;
+            nineBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            clearBtn.BackColor = btnTextColour;
+            clearBtn.ForeColor = colourBG;
+            clearBtn.FlatAppearance.BorderColor = btnTextColour;
+
+            equalBtn.BackColor = btnBG;
+            equalBtn.ForeColor = btnTextColour;
+            equalBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            additionBtn.BackColor = btnTextColour;
+            additionBtn.ForeColor = colourBG;
+            additionBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            subtractBtn.BackColor = btnBG;
+            subtractBtn.ForeColor = btnTextColour;
+            subtractBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            multiplyBtn.BackColor = btnBG;
+            multiplyBtn.ForeColor = btnTextColour;
+            multiplyBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            divisionBtn.BackColor = btnBG;
+            divisionBtn.ForeColor = btnTextColour;
+            divisionBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            decimalBtn.BackColor = btnBG;
+            decimalBtn.ForeColor = btnTextColour;
+            decimalBtn.FlatAppearance.BorderColor = btnBorderColour;
+
+            convertToBinary.BackColor = btnBGalt1;
+            convertToBinary.ForeColor = btnTextColour;
+            convertToBinary.FlatAppearance.BorderColor = btnBorderColour;
+
+            convertToDec.BackColor = btnBGalt1;
+            convertToDec.ForeColor = btnTextColour;
+            convertToDec.FlatAppearance.BorderColor = btnBorderColour;
+
+            convertToLocationNum.BackColor = btnBGalt1;
+            convertToLocationNum.ForeColor = btnTextColour;
+            convertToLocationNum.FlatAppearance.BorderColor = btnBorderColour;
+
         }
     }
 }
