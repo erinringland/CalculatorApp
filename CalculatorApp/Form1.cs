@@ -212,7 +212,119 @@ namespace CalculatorApp
 
         private void convertToLocationNum_Click(object sender, EventArgs e)
         {
+            string locationNumString = "";
+            var numToConvert = double.Parse(calTextBox.Text);
 
+            List<int> numList = new List<int>();
+
+            int[] locationNumValsRev = new int[] { 67108864, 33554432, 16777216, 8388608, 4194304, 2097152, 1048576, 262144, 131072, 65536, 32768, 16384, 8192, 4096, 2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1 };
+
+
+            foreach (var num in locationNumValsRev)
+            {
+                if (numToConvert == 1)
+                {
+                    numList.Add(1);
+                    numToConvert -= 1;
+                }
+
+                if (numToConvert >= num)
+                {
+                    numList.Add(num);
+                    numToConvert -= num;
+                }
+            }
+
+            foreach (var item in numList)
+            {
+                switch (item)
+                {
+                    case 1:
+                        locationNumString += 'a';
+                        break;
+                    case 2:
+                        locationNumString += 'b';
+                        break;
+                    case 4:
+                        locationNumString += 'c';
+                        break;
+                    case 8:
+                        locationNumString += 'd';
+                        break;
+                    case 16:
+                        locationNumString += 'e';
+                        break;
+                    case 32:
+                        locationNumString += 'f';
+                        break;
+                    case 64:
+                        locationNumString += 'g';
+                        break;
+                    case 128:
+                        locationNumString += 'h';
+                        break;
+                    case 256:
+                        locationNumString += 'i';
+                        break;
+                    case 512:
+                        locationNumString += 'j';
+                        break;
+                    case 1024:
+                        locationNumString += 'k';
+                        break;
+                    case 2048:
+                        locationNumString += 'l';
+                        break;
+                    case 4096:
+                        locationNumString += 'm';
+                        break;
+                    case 8192:
+                        locationNumString += 'n';
+                        break;
+                    case 16384:
+                        locationNumString += 'o';
+                        break;
+                    case 32768:
+                        locationNumString += 'p';
+                        break;
+                    case 65536:
+                        locationNumString += 'q';
+                        break;
+                    case 131072:
+                        locationNumString += 'r';
+                        break;
+                    case 262144:
+                        locationNumString += 's';
+                        break;
+                    case 1048576:
+                        locationNumString += 't';
+                        break;
+                    case 2097152:
+                        locationNumString += 'u';
+                        break;
+                    case 4194304:
+                        locationNumString += 'v';
+                        break;
+                    case 8388608:
+                        locationNumString += 'w';
+                        break;
+                    case 16777216:
+                        locationNumString += 'x';
+                        break;
+                    case 33554432:
+                        locationNumString += 'y';
+                        break;
+                    case 67108864:
+                        locationNumString += 'z';
+                        break;
+                }
+            }
+
+            char[] newArr = locationNumString.ToCharArray();
+            Array.Reverse(newArr);
+            string locationNumStringRev = new string(newArr);
+
+            calTextBox.Text = locationNumStringRev;
         }
     }
 }
